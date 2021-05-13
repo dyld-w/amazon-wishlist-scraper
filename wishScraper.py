@@ -1,4 +1,3 @@
-# from urllib.request import urlopen
 import os
 import re  # https://www.geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
 import tkinter as tk
@@ -6,7 +5,8 @@ import tkinter as tk
 import requests
 #  from selenium import webdriver
 #  from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver as uc  # https://github.com/ultrafunkamsterdam/undetected-chromedriver
+# https://github.com/ultrafunkamsterdam/undetected-chromedriver
+import undetected_chromedriver as uc
 from bs4 import BeautifulSoup as BS
 
 
@@ -80,7 +80,8 @@ def costCalc(url, costS=0, itemsS=0, prodList=""):
             items += 1
         # if the product has a name but not a price, print the name and a statement saying it won't be included in the calculation, so won't add to sum cost or inc num of items
         elif product != None and price == '-Infinity':
-            prodInfo = "\n" + product + " has an unknown price and won't be included in the calculation. \n"
+            prodInfo = "\n" + product + \
+                " has an unknown price and won't be included in the calculation. \n"
             prodL += prodInfo
 
         # if end is not None that means it has been found which means we've reached the end of the list and should return the sumCost and sumItems
@@ -147,7 +148,7 @@ def nameCheck(n):
     #  open lists.txt for reading to see if the inputted wishlist is already in lists.txt
     f = open(path, "r+")
     url = ""
-    #line counter so replace_line knows which line to replace
+    # line counter so replace_line knows which line to replace
     lnC = -1
     itemizedList = ""
 
